@@ -2,20 +2,19 @@
 #include <fstream>
 
 int main(){
+	DataFrame db(0,0);
 	std::ofstream outfile;
 	std::ifstream input;
-	input.open("./data/data.csv");
-	//ize_t linhasaux= getLinhas(input);
-	DataFrame db(0,0);
-	input>>db;
-	//std::vector<std::string> c_name;
+	input.open("./data/delta.csv");
+	std::string nome ("1");
+	size_t posicao = db.getposcolbyname(nome);
+	std::cout << "posição: " << posicao<<"\n";
 
-	//db.leitura(input);
-	//imprimir(db);
-	//std::cout << "At delta.csv: " << std::endl;
+	input>>db;
+
 	std::ofstream output;
 	std::cout<<db;
-	//std::cout << output << '\n';
+
 
 return 0;
 }
