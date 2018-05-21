@@ -4,10 +4,8 @@
 #include <sstream>
 #include <fstream>
 #include <string>
-#include "produto.h"
-#include "fruta.h"
-#include "roupa.h"
-#include "bebida.h"
+#include "conta.h"
+
 using namespace std;
 
 int main(int argc, char const *argv[])

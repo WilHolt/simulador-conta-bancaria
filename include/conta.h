@@ -2,31 +2,38 @@
 #define _CONTA_H_
 
 #include <iostream>
-
+#include <vector>
+class Operacao{
+	private:
+	std::string descricao_op;
+	int valor_op;
+	std::string flag;
+}
 class Produto
 {
 public:
-	Produto();
-	Produto(std::string _codigo, std::string _descricao, short _preco);
-	virtual ~Produto();
+	Conta();
+	Conta(std::string _codigo, std::string _descricao, short _preco);
+	virtual ~Conta();
 protected:
 	std::string agencia;
 	std::string numero;
 	std::string status;
 	double saldo;
 	double limite;
-	double limite_d;
+	double limite_disp;
 	friend double operator+ (Produto  &t1, Produto  &t2);
 	friend double operator- (Produto  &t1, Produto  &t2);
 public:
 	// getters
-	std::string getCodBarras();
-	std::string getDescricao();
-	double getPreco();
+	int getSaldo();
+	int getLimite();
+	double getLimite_disp();
 	// setters
 	void setCodBarras(std::string _codigo);
 	void setDescricao(std::string _descricao);
 	void setPreco(double _preco);
+	std::vector<Operacao> fatura;
 	//
 
 	friend std::ostream& operator<< (std::ostream &o, Produto const &t);
