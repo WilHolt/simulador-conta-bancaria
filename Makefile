@@ -7,14 +7,14 @@ TESTDIR = test
 LIBDIR  = lib
 
 CC = g++
-CFLAGS = -O3 -Wall -std=c++11 -pedantic -I. -I $(INCLUDEDIR) 
+CFLAGS = -O3 -Wall -std=c++11 -pedantic -I. -I $(INCLUDEDIR)
 LDFLAGS =
 AR = ar
 
-BIN = ${BINDIR}/dataframes
+BIN = ${BINDIR}/prog
 APP = ${APPDIR}/main.cpp
-LIBSTATIC = ${LIBDIR}/dataframe.a
-LIBDINAMIC = ${LIBDIR}/dataframe.so
+LIBSTATIC = ${LIBDIR}/prog1.a
+LIBDINAMIC = ${LIBDIR}/prog1.so
 
 SRC = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))
