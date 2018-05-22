@@ -5,51 +5,40 @@
 
  Conta::~Conta(){}
 
- Conta::Conta(std::string _codigo, std::string _descricao, short _preco):
-// 	m_cod_barras(_codigo), m_descricao(_descricao), m_preco(_preco) {}
+ Conta::Conta(std::string _agencia, std::string _numero, std::string _status,
+	double _saldo,
+	double _limite,
+	double _limite_disp):
+ 	numero(_numero), status(_status), saldo(_saldo), limite(_limite), limite_disp(_limite_disp) {}
 
-// std::string
-// Produto::getCodBarras() {
-// 	return m_cod_barras;
-// }
+std::string
+Conta::getAgencia() {
+	return agencia;
+ }
 
-// std::string
-// Produto::getDescricao() {
-// 	return m_descricao;
-// }
+std::string
+Conta::getNumero() {
+	return numero;
+}
 
-// double
-// Produto::getPreco() {
-// 	return m_preco;
-// }
+std::string
+Conta::getStatus() {
+	return status;
+}
+double
+Conta::getSaldo() {
+	return saldo;
+}
+double
+Conta::getLimite() {
+	return limite;
+}
+double 
+Conta::getLimite_disp() {
+	return limite_disp;
+}
 
-// void
-// Produto::setCodBarras(std::string _codigo) {
-// 	m_cod_barras = _codigo;
-// }
+std::ostream& operator<< (std::ostream &o, Conta const &p) {
+	return p.print(o);
+}
 
-// void
-// Produto::setDescricao(std::string _descricao) {
-// 	m_descricao = _descricao;
-// }
-
-// void
-// Produto::setPreco(double _preco) {
-// 	m_preco = _preco;
-// }
-
-// std::ostream& operator<< (std::ostream &o, Produto const &p) {
-// 	return p.print(o);
-// }
-// double operator+ (Produto  &t1, Produto  &t2){
-// 	double p1=t1.getPreco();
-// 	double p2 = t2.getPreco();
-// 	double result = p1+p2;
-// 	return result;
-// }
-// double operator- (Produto  &t1, Produto  &t2){
-// 	double p1=t1.getPreco();
-// 	double p2 = t2.getPreco();
-// 	double result = p1-p2;
-// 	return result;
-// }

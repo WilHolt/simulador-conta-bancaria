@@ -8,12 +8,15 @@ class Operacao{
 	std::string descricao_op;
 	int valor_op;
 	std::string flag;
-}
-class Produto
-{
+};
+
+class Conta{
 public:
 	Conta();
-	Conta(std::string _codigo, std::string _descricao, short _preco);
+	Conta(	std::string _agencia, std::string _numero, std::string _status,
+	double _saldo,
+	double _limite,
+	double _limite_disp);
 	virtual ~Conta();
 protected:
 	std::string agencia;
@@ -22,22 +25,30 @@ protected:
 	double saldo;
 	double limite;
 	double limite_disp;
-	friend double operator+ (Produto  &t1, Produto  &t2);
-	friend double operator- (Produto  &t1, Produto  &t2);
+	std::vector<Operacao> historico;
+protected:
+	//friend double operator+ (Conta  &t1, Conta  &t2);
+	//friend double operator- (Conta  &t1, Conta  &t2);
 public:
 	// getters
-	int getSaldo();
-	int getLimite();
+	std::string getAgencia();
+	std::string getNumero();
+	std::string getStatus();
+	double getSaldo();
+	double getLimite();
 	double getLimite_disp();
 	// setters
-	void setCodBarras(std::string _codigo);
-	void setDescricao(std::string _descricao);
-	void setPreco(double _preco);
+	int setSaldo();
+	int setLimite();
+	double setLimite_disp();
 	std::vector<Operacao> fatura;
-	//
-
-	friend std::ostream& operator<< (std::ostream &o, Produto const &t);
-private:
+	//metodos menu
+	void saque();
+	void deposito();
+	void transferencia(Conta &t1,Conta &t2 );
+	void printSaldo();
+	void printExtrato();
+public:
 	virtual std::ostream& print(std::ostream&) const = 0;
 };
 
