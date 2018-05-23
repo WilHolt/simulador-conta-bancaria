@@ -1,5 +1,6 @@
  #include <iostream>
  #include "conta.h"
+//OPERACOES
 Operacao::Operacao(){}
 
 Operacao::Operacao(std::string _descricao_op, double _valor_op, std::string _flag):
@@ -7,6 +8,13 @@ Operacao::Operacao(std::string _descricao_op, double _valor_op, std::string _fla
 
 Operacao::~Operacao(){}
 
+std::ostream& 
+operator<< (std::ostream &o, Operacao const &t){
+	// o<<t.descricao_op<<"\n"<<"valor:"<<t.valor<<"   "<<"Flag:"<<t.flag;
+	// return o;
+}
+
+//CONTA
  Conta::Conta() {}
 
  Conta::~Conta(){}
@@ -66,4 +74,20 @@ Conta::deposito(int valor){
 Operacao op(_descricao_op, _valor_op,_flag);
  historico.push_back(op);
 }
-
+void Conta::transferencia(Conta &t1,Conta &t2, double valor){
+	t2.deposito(valor);
+	t1.saque(valor);
+		std::string _descricao_op = "Transferencia";
+	double _valor_op= valor;
+	std::string _flag = "s";
+	Operacao op(_descricao_op, _valor_op,_flag);
+ historico.push_back(op);
+}
+void Conta::printSaldo(){
+	std::cout<<"Conta:"<<this->numero;
+	std::cout<<"   Saldo:"<<this->saldo<<std::endl;
+}
+void Conta::printExtrato(){
+	this->print(0);
+	//std::cout<<this->historico;
+}

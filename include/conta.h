@@ -12,6 +12,7 @@ public:
 Operacao();
 Operacao(std::string _descricao_op, double _valor_op, std::string _flag);
 ~Operacao();
+friend std::ostream& operator<< (std::ostream &o, Conta const &t);
 };
 
 class Conta{
@@ -49,7 +50,7 @@ public:
 	//metodos menu
 	void saque(int retirada);
 	void deposito(int valor);
-	void transferencia(Conta &t1,Conta &t2 );
+	void transferencia(Conta &t1,Conta &t2,double valor);
 	void printSaldo();
 	void printExtrato();
 	friend std::ostream& operator<< (std::ostream &o, Conta const &t);

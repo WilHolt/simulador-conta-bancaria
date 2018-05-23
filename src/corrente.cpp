@@ -13,7 +13,7 @@
 std::ostream& 
 Corrente::print(std::ostream &o) const {
 	o << std::setfill (' ') << std::setw (10) <<"Agencia:"<<agencia << " | " 
-		<< std::setfill ('.') << std::setw (20) <<"Numero:"<< numero << " | " 
+		<< std::setfill ('.') << std::setw (20) <<"Conta:"<< numero << " | " 
 		<< std::setfill (' ') << std::setw (5) <<"Status:"<<status << " | "
 		<< std::setfill (' ') << std::setw (3) <<"Tipo:" << tipo << " \n " 
 		<< std::setfill (' ') << std::setw (10) <<"Saldo:" <<saldo << " | " 
