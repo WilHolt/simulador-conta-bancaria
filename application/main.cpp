@@ -5,11 +5,23 @@
 #include <fstream>
 #include <string>
 #include "conta.h"
-
+#include "corrente.h"
+#include "poupanca.h"
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
+	std::vector<shared_ptr<Conta>> Itau;
+	Itau.push_back(make_shared<Corrente>("A32","3173","Especial",333.1, 1000, 677.9,"Corrente"));
+	Itau.push_back(make_shared<Poupanca>("A32","3173","Especial",333.1, 1000, 677.9,"Poupanca"));
+
+	for(auto i= Itau.begin(); i != Itau.end(); i++){
+	std::cout<<(**i)<<"\n"<<std::endl;
+	}
+	std::cout<<"antes do saque"<<std::endl;
+	Itau[0]->saque(10);
+	std::cout<<"depois do saque"<<std::endl;
+	cout<<*Itau[0];
 
 	// std::vector<shared_ptr<Produto>> lista;
 	// std::fstream file_stream;

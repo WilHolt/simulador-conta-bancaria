@@ -4,10 +4,14 @@
 #include <iostream>
 #include <vector>
 class Operacao{
-	private:
+private:
 	std::string descricao_op;
-	int valor_op;
+	double valor_op;
 	std::string flag;
+public:
+Operacao();
+Operacao(std::string _descricao_op, double _valor_op, std::string _flag);
+~Operacao();
 };
 
 class Conta{
@@ -43,11 +47,12 @@ public:
 	double setLimite_disp();
 	std::vector<Operacao> fatura;
 	//metodos menu
-	void saque();
-	void deposito();
+	void saque(int retirada);
+	void deposito(int valor);
 	void transferencia(Conta &t1,Conta &t2 );
 	void printSaldo();
 	void printExtrato();
+	friend std::ostream& operator<< (std::ostream &o, Conta const &t);
 public:
 	virtual std::ostream& print(std::ostream&) const = 0;
 };

@@ -16,7 +16,7 @@ public:
 	~Poupanca();
 
 private:
-	std::ostream& print(std::ostream &o) const;
+	std::ostream& print(std::ostream&) const ;
 };
 
 #endif

@@ -1,5 +1,11 @@
  #include <iostream>
  #include "conta.h"
+Operacao::Operacao(){}
+
+Operacao::Operacao(std::string _descricao_op, double _valor_op, std::string _flag):
+ descricao_op(_descricao_op), valor_op(_valor_op), flag(_flag){}
+
+Operacao::~Operacao(){}
 
  Conta::Conta() {}
 
@@ -38,7 +44,26 @@ Conta::getLimite_disp() {
 	return limite_disp;
 }
 
-std::ostream& operator<< (std::ostream &o, Conta const &p) {
-	return p.print(o);
+std::ostream& operator<< (std::ostream &o, Conta const &t) {
+	return t.print(o);
+}
+
+void
+Conta::saque(int retirada){
+ this->saldo= saldo-retirada;
+	std::string _descricao_op = "Saque";
+	double _valor_op= retirada;
+	std::string _flag = "s";
+Operacao op(_descricao_op, _valor_op,_flag);
+ historico.push_back(op);
+}
+void
+Conta::deposito(int valor){
+ this->saldo= saldo+valor;
+	std::string _descricao_op = "Deposito";
+	double _valor_op= valor;
+	std::string _flag = "s";
+Operacao op(_descricao_op, _valor_op,_flag);
+ historico.push_back(op);
 }
 
