@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <vector>
+
 class Operacao{
 private:
 	std::string descricao_op;
@@ -12,8 +13,13 @@ public:
 Operacao();
 Operacao(std::string _descricao_op, double _valor_op, std::string _flag);
 ~Operacao();
-friend std::ostream& operator<< (std::ostream &o, Conta const &t);
+void Print();
+friend std::ostream& operator<< (std::ostream &o, Operacao const &t){
+	o<<t.descricao_op << "\n" << "valor:" << t.valor_op <<"   "<<"Flag:"<< t.flag;
+	return o;
+}
 };
+
 
 class Conta{
 public:

@@ -18,19 +18,23 @@ int main(int argc, char const *argv[])
 	for(auto i= Itau.begin(); i != Itau.end(); i++){
 	std::cout<<(**i)<<"\n"<<std::endl;
 	}
-	std::cout<<"antes do saque"<<std::endl;
+	std::cout<<"\n"<<"antes do saque"<<std::endl;
 	Itau[0]->saque(10);
-	std::cout<<"depois do saque"<<std::endl;
+	std::cout<<"\n"<<"depois do saque"<<std::endl;
 	cout<<*Itau[0]<<std::endl;
-	std::cout<<"depois do deposito"<<std::endl;
+	std::cout<<"\n"<<"depois do deposito"<<std::endl;
 	Itau[0]->deposito(10);
 	cout<<*Itau[0]<<std::endl;
-	std::cout<<"depois da transferencia"<<std::endl;
+	std::cout<<"\n"<<"depois da transferencia"<<std::endl;
 	Itau[0]->transferencia(*Itau[0],*Itau[1], 100);
 	cout<<*Itau[0]<<std::endl;
 	cout<<*Itau[1]<<std::endl;
-	std::cout<<"print saldo:";
+	std::cout<<"\n"<<"print saldo:"<<"\n";
 	Itau[1]->printSaldo();
+	std::cout<<"\n"<<"print extrato 1:"<<"\n";
+	Itau[0]->printExtrato();
+	std::cout<<"\n"<<"print extrato 2:"<<"\n";
+	Itau[1]->printExtrato();
 
 
 	// std::vector<shared_ptr<Produto>> lista;

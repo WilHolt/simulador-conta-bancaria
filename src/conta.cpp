@@ -8,11 +8,7 @@ Operacao::Operacao(std::string _descricao_op, double _valor_op, std::string _fla
 
 Operacao::~Operacao(){}
 
-std::ostream& 
-operator<< (std::ostream &o, Operacao const &t){
-	// o<<t.descricao_op<<"\n"<<"valor:"<<t.valor<<"   "<<"Flag:"<<t.flag;
-	// return o;
-}
+
 
 //CONTA
  Conta::Conta() {}
@@ -47,7 +43,7 @@ double
 Conta::getLimite() {
 	return limite;
 }
-double 
+double
 Conta::getLimite_disp() {
 	return limite_disp;
 }
@@ -62,7 +58,7 @@ Conta::saque(int retirada){
 	std::string _descricao_op = "Saque";
 	double _valor_op= retirada;
 	std::string _flag = "s";
-Operacao op(_descricao_op, _valor_op,_flag);
+  Operacao op(_descricao_op, _valor_op,_flag);
  historico.push_back(op);
 }
 void
@@ -88,6 +84,9 @@ void Conta::printSaldo(){
 	std::cout<<"   Saldo:"<<this->saldo<<std::endl;
 }
 void Conta::printExtrato(){
-	this->print(0);
-	//std::cout<<this->historico;
+  std::cout << *this << '\n';
+	for (auto it = this->historico.begin(); it != this->historico.end(); it++) {
+    std::cout << *it << '\n';
+  }
+	//std::cout<<this->(**historico);
 }
