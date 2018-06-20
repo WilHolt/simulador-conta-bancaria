@@ -6,15 +6,16 @@ OBJDIR = build
 TESTDIR = test
 LIBDIR  = lib
 
-CC = g++
-CFLAGS = -O3 -Wall -std=c++11 -pedantic -I. -I $(INCLUDEDIR)
-LDFLAGS =
-AR = ar
 
 BIN = ${BINDIR}/prog
 APP = ${APPDIR}/main.cpp
 LIBSTATIC = ${LIBDIR}/prog1.a
 LIBDINAMIC = ${LIBDIR}/prog1.so
+
+CC = g++
+CFLAGS = -O3 -Wall -std=c++11 -pedantic -I. -I $(INCLUDEDIR)
+LDFLAGS = -L/$(LIBDIR) -Wl,-rpath=/$(LIBDIR) $(LIBDINAMIC)
+
 
 SRC = $(wildcard $(SRCDIR)/*.cpp)
 OBJS = $(patsubst $(SRCDIR)/%.cpp,$(OBJDIR)/%.o,$(SRC))

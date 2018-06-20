@@ -1,5 +1,8 @@
  #include <iostream>
  #include "conta.h"
+ #include "mbasic.h"
+ 
+ using namespace mbasic;
 //OPERACOES
 Operacao::Operacao(){}
 
@@ -54,22 +57,24 @@ std::ostream& operator<< (std::ostream &o, Conta const &t) {
 
 void
 Conta::saque(int retirada){
- this->saldo= saldo-retirada;
+ this->saldo= MathBasic::dif<double>(saldo,retirada);
 	std::string _descricao_op = "Saque";
 	double _valor_op= retirada;
 	std::string _flag = "s";
   Operacao op(_descricao_op, _valor_op,_flag);
  historico.push_back(op);
 }
+
 void
 Conta::deposito(int valor){
- this->saldo= saldo+valor;
+ this->saldo= MathBasic::add<double>(saldo,valor);
 	std::string _descricao_op = "Deposito";
 	double _valor_op= valor;
 	std::string _flag = "s";
 Operacao op(_descricao_op, _valor_op,_flag);
  historico.push_back(op);
 }
+
 void Conta::transferencia(Conta &t1,Conta &t2, double valor){
 	t2.deposito(valor);
 	t1.saque(valor);
