@@ -14,7 +14,7 @@ LIBDINAMIC = ${LIBDIR}/prog1.so
 
 CC = g++
 CFLAGS = -O3 -Wall -std=c++11 -pedantic -I. -I $(INCLUDEDIR)
-LDFLAGS = -L/$(LIBDIR) -Wl,-rpath=/$(LIBDIR) $(LIBDINAMIC)
+LDFLAGS = 
 
 
 SRC = $(wildcard $(SRCDIR)/*.cpp)
