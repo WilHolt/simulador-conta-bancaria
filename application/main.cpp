@@ -9,12 +9,12 @@
 #include "poupanca.h"
 #include <stdexcept>  
 #include "execoes.h"
-
+#include "common.h"
 using namespace std;
 
 int main(int argc, char const *argv[])
 {
-
+	criarConta(argv[1],"0001");
 	std::vector<shared_ptr<Conta>> Itau;
 	Itau.push_back(make_shared<Corrente>("A32","3173","Especial",333.1, 1000, 677.9,"Corrente"));
 	Itau.push_back(make_shared<Poupanca>("A32","3333","Especial",333.1, 1000, 677.9,"Poupanca"));

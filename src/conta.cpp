@@ -26,6 +26,9 @@ Operacao::~Operacao(){}
 	double _limite_disp):
  	numero(_numero), status(_status), saldo(_saldo), limite(_limite), limite_disp(_limite_disp) {}
 
+
+
+
 std::string
 Conta::getAgencia() {
 	return agencia;
