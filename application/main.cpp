@@ -16,6 +16,10 @@ int main(int argc, char const *argv[])
 {
 	criarConta(argv[1],"a32","32211","Especial",313.2,1000,6555.4,"Corrente");
 	std::vector<shared_ptr<Conta>> Itau;
+
+	listarContas();
+	std::cout <<'\n';
+	detalhesConta("32211");
 	Itau.push_back(make_shared<Corrente>("A32","3173","Especial",333.1, 1000, 677.9,"Corrente"));
 	Itau.push_back(make_shared<Poupanca>("A32","3333","Especial",333.1, 1000, 677.9,"Poupanca"));
 

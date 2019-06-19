@@ -7,4 +7,14 @@ criarConta(std::string filename, std::string _agencia, std::string _numero, std:
 	double _limite,
 	double _limite_disp,
 	std::string _tipo);
+
+void 
+listarContas();
+void 
+detalhesConta(std::string num_);
+void
+AlterarConta();
+void 
+excluirConta();
+
 #endif

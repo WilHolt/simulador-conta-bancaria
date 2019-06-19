@@ -26,5 +26,26 @@ criarConta(std::string filename, std::string _agencia, std::string _numero, std:
 
 
 	}
+	}
+void
+listarContas(){
+	std::ifstream contas;
+	contas.open("data/contas.txt", std::ios::app);
+	std::string conta_;
+	while(getline(contas,conta_)){
+		std::cout<<conta_<<'\n';
+	}
 
 }
+void 
+detalhesConta(std::string num_){
+		std::ifstream conta;
+		std::string detalhe_;
+		conta.open("data/"+num_+".txt", std::ios::app);
+
+		while(getline(conta,detalhe_)){
+		std::cout<<detalhe_<<'\n';
+	}
+
+}
+
