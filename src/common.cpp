@@ -1,5 +1,5 @@
 #include "common.h"
-
+#include <cstdio>
 void
 criarConta(std::string filename, std::string _agencia, std::string _numero, std::string _status,
 	double _saldo,
@@ -48,4 +48,46 @@ detalhesConta(std::string num_){
 	}
 
 }
+void
+alterarConta(std::string num_){
+			std::ifstream conta;
+		std::string detalhe_;
+		conta.open("data/"+num_+".txt", std::ios::app);
+		int cont= 0;
+		std::string filename, std::string _agencia, std::string _numero, std::string _status,
+	double _saldo,
+	double _limite,
+	double _limite_disp,
+	std::string _tipo
+		while(getline(conta,detalhe_)){
+			if(cont == 0){
+				//agencia
+				_agencia = detalhe_;
+			}
+			if(cont == 2){
+				//numero
+				_numero = detalhe_;
+
+			}
+			if(cont == 3){
+				status_ = detalhe_;
+
+			}						
+			if(cont == 4){
+				saldo = detalhe_;
+
+			}						
+			if(cont == 5){
+				_limite = detalhe_;
+
+			}	
+			if(cont == 5){
+				_limite_disp = detalhe_;
+
+			}			
+		}
+		std::string remove_ ="data/"+num_+".txt";
+		remove(remove_);
+}
+void Excluir()
 

@@ -15,6 +15,6 @@ detalhesConta(std::string num_);
 void
 AlterarConta();
 void 
-excluirConta();
+excluirConta(std::string num_);
 
 #endif
