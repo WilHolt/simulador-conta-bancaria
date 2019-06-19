@@ -49,16 +49,14 @@ detalhesConta(std::string num_){
 
 }
 void
-alterarConta(std::string num_){
+alterarConta(std::string num_, int param){
 			std::ifstream conta;
 		std::string detalhe_;
 		conta.open("data/"+num_+".txt", std::ios::app);
 		int cont= 0;
-		std::string filename, std::string _agencia, std::string _numero, std::string _status,
-	double _saldo,
-	double _limite,
-	double _limite_disp,
-	std::string _tipo
+		 std::string _agencia, _numero, _status;
+	double _saldo, _limite, _limite_disp;
+	std::string _tipo;
 		while(getline(conta,detalhe_)){
 			if(cont == 0){
 				//agencia
@@ -70,24 +68,53 @@ alterarConta(std::string num_){
 
 			}
 			if(cont == 3){
-				status_ = detalhe_;
+				_status = std::stoi(detalhe_);
 
 			}						
 			if(cont == 4){
-				saldo = detalhe_;
+				_saldo = std::stoi(detalhe_);
 
 			}						
 			if(cont == 5){
-				_limite = detalhe_;
+				_limite = std::stoi(detalhe_);
 
 			}	
 			if(cont == 5){
-				_limite_disp = detalhe_;
+				_limite_disp = std::stoi(detalhe_);
 
 			}			
 		}
+		_saldo = param;
 		std::string remove_ ="data/"+num_+".txt";
-		remove(remove_);
+		remove(remove_.c_str());
+		std::ofstream conta_;
+		conta_.open( "data/"+_numero+".txt", std::ios::app);
+		if(conta.is_open()){
+			conta_<<_agencia<<'\n';
+			conta_<<_numero<<'\n';
+			conta_<<_status<<'\n';
+			conta_<<_saldo<<'\n';;
+			conta_<<_limite<<'\n';
+			conta_<<_limite_disp<<'\n';
+			conta_<<_tipo<<'\n';
+	
+	
+		}
 }
-void Excluir()
+void Excluir(std::string num_){
+	std::fstream contas;
+	std::string detalhe_;
+	contas.open("data/contas.txt", std::ios::app);
+	std::vector<std::string> temp;
+	while(getline(contas,detalhe_)){
+		temp.push_back(detalhe_);
+	}
+	remove("data/contas.txt");
+	for(unsigned int i = 0; i < temp.size() ; i++){
+		if(temp[i]!=num_){
+			contas<<temp[0]<<'\n';
+		}
+	}
+
+}
 

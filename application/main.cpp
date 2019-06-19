@@ -14,6 +14,41 @@ using namespace std;
 
 int main(int argc, char const *argv[])
 {
+	int option;
+	while(true){
+		std::cout<<"Selecione uma operação"<<std::endl
+		<<"1. Criar Conta"<<std::endl
+		<<"2. Listar Contas"<<std::endl		
+		<<"3. Alterar Conta"<<std::endl		
+		<<"4. Detalhe de uma Conta"<<std::endl		
+		<<"5. Excluir Conta"<<std::endl		
+		<<"6. Realizar Transferencia"<<std::endl		
+		<<"7. Realizar Depósito"<<std::endl		
+		<<"8. Realizar Saque"<<std::endl		
+		<<"9. Sair"<<std::endl;	
+		cin>>option;
+		
+		switch(option){
+			case 1:
+			std::cout<<" Criar Conta";
+			break;
+			case 2:
+			break;
+			case 3:
+			break;
+			case 4:
+			break;
+			case 5:
+			break;
+			case 6:
+			break;
+			case 7:
+			break;
+			case 8:
+			break;
+		};
+
+	};
 	criarConta(argv[1],"a32","32211","Especial",313.2,1000,6555.4,"Corrente");
 	std::vector<shared_ptr<Conta>> Itau;
 

@@ -13,7 +13,7 @@ listarContas();
 void 
 detalhesConta(std::string num_);
 void
-AlterarConta();
+AlterarConta(std::string num_, int param);
 void 
 excluirConta(std::string num_);
 
