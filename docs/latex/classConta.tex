@@ -1,0 +1,176 @@
+\hypertarget{classConta}{}\section{Conta Class Reference}
+\label{classConta}\index{Conta@{Conta}}
+
+
+Classe \hyperlink{classConta}{Conta}.  
+
+
+
+
+{\ttfamily \#include $<$conta.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classConta_ab22bc5e18f43b383aca57201ee68cb1e}{Conta} ()
+\item 
+\hyperlink{classConta_abb5206020d4d57b19f5285784781ade6}{Conta} (std\+::string \+\_\+nome, std\+::string \+\_\+numero, double \+\_\+saldo)
+\item 
+virtual \hyperlink{classConta_aa56e18d2c9eeb373cae18aab560b8261}{$\sim$\+Conta} ()
+\item 
+std\+::string \hyperlink{classConta_afb0c4a2741f4636648d962c78bc54a9a}{get\+Nome} ()
+\item 
+std\+::string \hyperlink{classConta_a955a7f08e45fce65f4d1ded10836a7b2}{get\+Numero} ()
+\item 
+double \hyperlink{classConta_a6db61cbaef5a054ef632597316a6aaf2}{get\+Saldo} ()
+\item 
+int \hyperlink{classConta_a2f7bbd9a98bb1e62b04bf9f2d2e126bf}{set\+Saldo} ()
+\item 
+void \hyperlink{classConta_a27d1541cad3d26df35ca230d6640cc85}{saque} (int retirada)
+\item 
+void \hyperlink{classConta_a1b6603aa8a3f0f667fae304521ab617e}{deposito} (int valor)
+\item 
+void \hyperlink{classConta_a92552b6c27a145002ffc247b9835834b}{transferencia} (std\+::shared\+\_\+ptr$<$ \hyperlink{classConta}{Conta} $>$ t1, std\+::shared\+\_\+ptr$<$ \hyperlink{classConta}{Conta} $>$ t2, double valor)
+\item 
+void \hyperlink{classConta_a00065eb73daf114c929f775b4750324b}{print\+Saldo} ()
+\item 
+void \hyperlink{classConta_a39bd0d37b4c2e613542c3d7e794d5059}{print\+Extrato} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConta_a34c742110e6fd3b0297e3dc1ac10ab6a}\label{classConta_a34c742110e6fd3b0297e3dc1ac10ab6a}} 
+std\+::vector$<$ \hyperlink{classOperacao}{Operacao} $>$ {\bfseries fatura}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classConta_a69b0f3d489f92a4ccf8f310a0a4746a0}\label{classConta_a69b0f3d489f92a4ccf8f310a0a4746a0}} 
+std\+::string {\bfseries nome}
+\item 
+\mbox{\Hypertarget{classConta_a5d1f9b17ce74680ed3678e8eb219f006}\label{classConta_a5d1f9b17ce74680ed3678e8eb219f006}} 
+std\+::string {\bfseries numero}
+\item 
+\mbox{\Hypertarget{classConta_a1a1918d76ff00086dc6c5bcffbd8eef0}\label{classConta_a1a1918d76ff00086dc6c5bcffbd8eef0}} 
+double {\bfseries saldo}
+\item 
+\mbox{\Hypertarget{classConta_aef5f0fc20b8aade058a2fb6864ee027f}\label{classConta_aef5f0fc20b8aade058a2fb6864ee027f}} 
+std\+::vector$<$ \hyperlink{classOperacao}{Operacao} $>$ {\bfseries historico}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classConta_a0a72b144512bab26faac4766f3305d59}{operator$<$$<$} (std\+::ostream \&o, \hyperlink{classConta}{Conta} \&t)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classe \hyperlink{classConta}{Conta}. 
+
+Classe que representa as contas de um banco, com suas operações e atributos. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classConta_ab22bc5e18f43b383aca57201ee68cb1e}\label{classConta_ab22bc5e18f43b383aca57201ee68cb1e}} 
+\index{Conta@{Conta}!Conta@{Conta}}
+\index{Conta@{Conta}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{Conta()}{Conta()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Conta\+::\+Conta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+O Construtor. Um Construtor default; \mbox{\Hypertarget{classConta_abb5206020d4d57b19f5285784781ade6}\label{classConta_abb5206020d4d57b19f5285784781ade6}} 
+\index{Conta@{Conta}!Conta@{Conta}}
+\index{Conta@{Conta}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{Conta()}{Conta()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Conta\+::\+Conta (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+nome,  }\item[{std\+::string}]{\+\_\+numero,  }\item[{double}]{\+\_\+saldo }\end{DoxyParamCaption})}
+
+O Construtor. Um Construtor com parametros; 
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+nome} & \\
+\hline
+{\em \+\_\+numero} & \\
+\hline
+{\em \+\_\+saldo} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classConta_aa56e18d2c9eeb373cae18aab560b8261}\label{classConta_aa56e18d2c9eeb373cae18aab560b8261}} 
+\index{Conta@{Conta}!````~Conta@{$\sim$\+Conta}}
+\index{````~Conta@{$\sim$\+Conta}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{$\sim$\+Conta()}{~Conta()}}
+{\footnotesize\ttfamily Conta\+::$\sim$\+Conta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+O Destrutor. Um Destrutor default; 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classConta_a1b6603aa8a3f0f667fae304521ab617e}\label{classConta_a1b6603aa8a3f0f667fae304521ab617e}} 
+\index{Conta@{Conta}!deposito@{deposito}}
+\index{deposito@{deposito}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{deposito()}{deposito()}}
+{\footnotesize\ttfamily void Conta\+::deposito (\begin{DoxyParamCaption}\item[{int}]{valor }\end{DoxyParamCaption})}
+
+Realizar Deposito. Função de deposito para adicionar dinheiro de uma conta unica. \mbox{\Hypertarget{classConta_afb0c4a2741f4636648d962c78bc54a9a}\label{classConta_afb0c4a2741f4636648d962c78bc54a9a}} 
+\index{Conta@{Conta}!get\+Nome@{get\+Nome}}
+\index{get\+Nome@{get\+Nome}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{get\+Nome()}{getNome()}}
+{\footnotesize\ttfamily std\+::string Conta\+::get\+Nome (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter Nome. Utilizado para pegar somente o nome do proprietario da conta \mbox{\Hypertarget{classConta_a955a7f08e45fce65f4d1ded10836a7b2}\label{classConta_a955a7f08e45fce65f4d1ded10836a7b2}} 
+\index{Conta@{Conta}!get\+Numero@{get\+Numero}}
+\index{get\+Numero@{get\+Numero}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{get\+Numero()}{getNumero()}}
+{\footnotesize\ttfamily std\+::string Conta\+::get\+Numero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter Numero. Utilizado para pegar somente o numero da \hyperlink{classConta}{Conta} \mbox{\Hypertarget{classConta_a6db61cbaef5a054ef632597316a6aaf2}\label{classConta_a6db61cbaef5a054ef632597316a6aaf2}} 
+\index{Conta@{Conta}!get\+Saldo@{get\+Saldo}}
+\index{get\+Saldo@{get\+Saldo}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{get\+Saldo()}{getSaldo()}}
+{\footnotesize\ttfamily double Conta\+::get\+Saldo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Getter Saldo. Utilizado para pegar o Saldo da \hyperlink{classConta}{Conta} \mbox{\Hypertarget{classConta_a39bd0d37b4c2e613542c3d7e794d5059}\label{classConta_a39bd0d37b4c2e613542c3d7e794d5059}} 
+\index{Conta@{Conta}!print\+Extrato@{print\+Extrato}}
+\index{print\+Extrato@{print\+Extrato}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{print\+Extrato()}{printExtrato()}}
+{\footnotesize\ttfamily void Conta\+::print\+Extrato (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Mostrar Extrato. Função para mostrar extrato de todas as operações realizadas. \mbox{\Hypertarget{classConta_a00065eb73daf114c929f775b4750324b}\label{classConta_a00065eb73daf114c929f775b4750324b}} 
+\index{Conta@{Conta}!print\+Saldo@{print\+Saldo}}
+\index{print\+Saldo@{print\+Saldo}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{print\+Saldo()}{printSaldo()}}
+{\footnotesize\ttfamily void Conta\+::print\+Saldo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Mostrar Saldo. Função de mostrar apenas saldo. \mbox{\Hypertarget{classConta_a27d1541cad3d26df35ca230d6640cc85}\label{classConta_a27d1541cad3d26df35ca230d6640cc85}} 
+\index{Conta@{Conta}!saque@{saque}}
+\index{saque@{saque}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{saque()}{saque()}}
+{\footnotesize\ttfamily void Conta\+::saque (\begin{DoxyParamCaption}\item[{int}]{retirada }\end{DoxyParamCaption})}
+
+Realizar Saque. Função de saque para retirar dinheiro de uma conta unica. \mbox{\Hypertarget{classConta_a2f7bbd9a98bb1e62b04bf9f2d2e126bf}\label{classConta_a2f7bbd9a98bb1e62b04bf9f2d2e126bf}} 
+\index{Conta@{Conta}!set\+Saldo@{set\+Saldo}}
+\index{set\+Saldo@{set\+Saldo}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{set\+Saldo()}{setSaldo()}}
+{\footnotesize\ttfamily int Conta\+::set\+Saldo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Setter Saldo. Usado para colocar um valor de saldo para conta \mbox{\Hypertarget{classConta_a92552b6c27a145002ffc247b9835834b}\label{classConta_a92552b6c27a145002ffc247b9835834b}} 
+\index{Conta@{Conta}!transferencia@{transferencia}}
+\index{transferencia@{transferencia}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{transferencia()}{transferencia()}}
+{\footnotesize\ttfamily void Conta\+::transferencia (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classConta}{Conta} $>$}]{t1,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{classConta}{Conta} $>$}]{t2,  }\item[{double}]{valor }\end{DoxyParamCaption})}
+
+Realizar Transferencia. Função para realizar a transferencia de dinheiro de uma conta para outra. \begin{DoxySeeAlso}{See also}
+\hyperlink{classConta_a27d1541cad3d26df35ca230d6640cc85}{saque()} 
+
+\hyperlink{classConta_a1b6603aa8a3f0f667fae304521ab617e}{deposito()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classConta_a0a72b144512bab26faac4766f3305d59}\label{classConta_a0a72b144512bab26faac4766f3305d59}} 
+\index{Conta@{Conta}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Conta@{Conta}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{o,  }\item[{\hyperlink{classConta}{Conta} \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+Sobrecarga de operador extração. Sobrecarga de operador extração de conta unica; 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/projects/simulador-\/conta-\/bancaria/include/conta.\+h\item 
+/mnt/c/projects/simulador-\/conta-\/bancaria/src/conta.\+cpp\end{DoxyCompactItemize}

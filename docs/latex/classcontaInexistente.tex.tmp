@@ -1,0 +1,22 @@
+\hypertarget{classcontaInexistente}{}\section{conta\+Inexistente Class Reference}
+\label{classcontaInexistente}\index{conta\+Inexistente@{conta\+Inexistente}}
+
+
+{\ttfamily \#include $<$execoes.\+h$>$}
+
+
+
+Inheritance diagram for conta\+Inexistente\+:
+% FIG 0
+
+
+Collaboration diagram for conta\+Inexistente\+:
+% FIG 1
+
+
+\subsection{Detailed Description}
+!\+Conta Inexistente. execão para detectar que a conta não existe para realizar operações; 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/mnt/c/projects/simulador-\/conta-\/bancaria/include/execoes.\+h\end{DoxyCompactItemize}
